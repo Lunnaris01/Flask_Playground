@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Landing Page</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -91,42 +89,6 @@
     {% endblock %}
 </header>
 
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="flash-message {{ 'success' if message == 'Login Successful' else 'error' }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
-
-<style>
-    .flash-message {
-        width: 100%; /* Full-width bar */
-        padding: 10px; /* Spacing inside the bar */
-        text-align: center; /* Center the text */
-        color: white; /* Text color */
-        font-size: 18px; /* Adjust font size */
-        font-weight: bold; /* Make the text bold */
-        position: fixed; /* Sticks to the top */
-        top: 0; /* Align at the top */
-        left: 0; /* Full width from the left */
-        z-index: 9999; /* Ensures it appears above other content */
-    }
-
-    /* Green bar for success */
-    .flash-message.success {
-        background-color: #4CAF50; /* Green color */
-    }
-
-    /* Red bar for error */
-    .flash-message.error {
-        background-color: #f44336; /* Red color */
-    }
-</style>
-
-{% block content %}
 <div class="section">
     <h2>Why Choose Us?</h2>
     <div class="features">
@@ -144,10 +106,6 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-<script src = "/js/bootstrap.js"></script>
-
 {% block contact_form %}
 <div class="section">
     <h2>Contact Us</h2>
