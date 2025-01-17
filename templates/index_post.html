@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% block header %}
+    <h1>Welcome to Our Landing Page for POST Requests!</h1>
+{%  endblock %}
+
+{% block contact_form %}
+    <div class="section">
+    <h2>Member Login:</h2>
+    <form method="POST" action="{{ url_for('index_post') }}">
+        <input type = "text" name="username" placeholder="Username"><br>
+        <input type = "password" name="password" placeholder="Password"><br>
+        <input type = "submit" value="Login">
+
+    </form>
+    </div>
+{%  endblock %}

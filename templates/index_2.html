@@ -1,0 +1,18 @@
+{%  extends "base.html" %}
+{% block header %}
+    <h1>Welcome to Our Landing Page</h1>
+    <p>Lets get you started right away!!</p>
+{% endblock %}
+
+{% block footnotes %}
+    <p> &copy; {{year}} Your Company. All rights reserved.</p>
+    <ul>
+        {% for item in date %}
+                <ul {%  if item == 16 %} style="color:red" {% endif %}> {{ item }}</ul>
+        {% endfor %}
+
+    </ul>
+    <a href="{{ url_for("index") }}" style="color:red">Check out the 1st Index Page!" </a>
+
+
+{% endblock %}

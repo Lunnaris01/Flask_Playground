@@ -1,0 +1,18 @@
+{%  extends "base.html" %}
+{% block header %}
+    <h1>Welcome to Our Landing Page</h1>
+    <p>You found the right place for the growth of your company!</p>
+{% endblock %}
+
+{% block footnotes %}
+    <h1>Filters:</h1>
+    <p>{{ foottext }}</p>
+    <p>{{ foottext | upper }}</p>
+    <p>{{ foottext | lower }}</p>
+    <p>{{ foottext | title }}</p>
+    <p>{{ foottext | replace('f','g') | replace('t','d') }}</p>
+    <p>{{ foottext | reverse_string }}</p>
+    <p>{{ foottext | slice(3,-3) }}</p>
+    <a href="{{ url_for('index2') }}" style="color:blue">Check out the 2nd Index Page!" </a>
+
+{% endblock %}
