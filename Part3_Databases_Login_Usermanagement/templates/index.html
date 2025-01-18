@@ -1,0 +1,14 @@
+{%  extends "base.html" %}
+
+{% block content %}
+    <h1>More advanced database with proper login</h1>
+        {% if current_user.is_authenticated %}
+            <h3>Hello {{ current_user.username }}</h3>
+            <a href=" {{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <h3>Hello! Do you want to Sign up or Log in?</h3>
+            <a href=" {{ url_for('login') }}" class="btn btn-primary">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn btn-outline-secondary">SignUp</a>
+
+        {% endif %}
+{% endblock %}

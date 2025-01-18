@@ -1,0 +1,47 @@
+{%  extends "base.html" %}
+
+{% block content %}
+    Welcome to the Database Page! <br>
+    {{ message }} <br>
+    We can display our entry as a list:
+    <ul style="list-style: none; padding: 0;">
+        {% for person in people %}
+            <li style="font-family: Arial, sans-serif;">
+                <span style="display: inline-block; width: {{ maxNameLen*10 }}px;">{{ person.name }}</span>
+                <span>{{ person.age }}</span> <button onClick="deletePerson({{ person.pid }})">Delete</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add Person:</h3>
+    <small>Special tip: Use a long name to see some functionality</small>
+    <form action="{{  url_for('simple') }}" method="POST">
+        <input type="text" name="name" placeholder="Name" required="required"><br>
+        <input type="number" name="age" placeholder="Age" required="required"><br>
+        <input type="text" name="job" placeholder="Job"><br>
+        <input type="submit" value="Create"><br>
+    </form>
+
+    <script type="text/javascript">
+        function deletePerson(pid) {
+            fetch('{{ url_for("simple_delete", pid=pid) }}' + pid, {
+                method: 'DELETE'
+            }).then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    console.error('Failed to delete the item with pid: ', pid);
+                }
+            }).catch(error => {
+                console.error('Error during fetching: ', error);
+            })
+        }
+    </script>
+
+
+{% endblock %}
+
+{% block footnotes %}
+    <h1>Footnotes</h1>
+
+{%  endblock %}

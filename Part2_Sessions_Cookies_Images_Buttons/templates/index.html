@@ -1,0 +1,39 @@
+{%  extends "base.html" %}
+{% block header %}
+    <h1>This is a playground for testing things</h1>
+    <p> </p>
+{% endblock %}
+
+
+{% block content %}
+    <div class="section">
+    <a href="#" class="btn btn-group-toggle"> Bootstrap Sample Button</a>
+    <a href="#" class="btn btn-dark">Unfunctional Second Button</a>
+    <a href="#" class="btn btn-light">This doesnt do anything</a>
+<br> <br>
+    <a href="{{ url_for('set_data') }}" class="btn btn-outline-danger">Set Session Data</a>
+    <br> <br>
+    <a href="{{ url_for('get_data') }}" class="btn btn-outline-success">Get Session Data</a>
+    <br> <br>
+    <a href="{{ url_for('clear_session') }}" class="btn btn-outline-primary">Clear Session Data</a>
+    <br> <br>
+    <a href="{{ url_for('set_cookie') }}" class="btn btn-outline-dark">  Accept the   <img src="/img/cookie.jpg" alt="Text" height="64" width="64"/></a>
+    <br> <br>
+    <a href="{{ url_for('get_cookie') }}" class="btn btn-outline-info">  Get the   <img src="/img/cookie.jpg" alt="Text" height="64" width="64"/></a>
+    <br> <br>
+    <a href="{{ url_for('remove_cookie') }}" class="btn btn-outline-secondary">  Get rid of the   <img src="/img/cookie.jpg" alt="Text" height="64" width="64"/></a>
+    <br> <br>
+
+
+    <h3> {{ message }}</h3>
+    </div>
+{% endblock %}
+
+{% block contact_form %}
+
+{% endblock %}
+
+{% block footnotes %}
+    <h1>Footnotes</h1>
+
+{%  endblock %}
